@@ -28,6 +28,7 @@
     "website": "http://cubicERP.com",
     "category": "Others",
     "depends": ["base"],
+    'license': 'AGPL-3',
     "data":["res_state_view.xml",
             "res_partner_view.xml",
             ],
