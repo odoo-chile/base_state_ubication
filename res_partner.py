@@ -27,16 +27,18 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from openerp import models, fields
 
 
-class res_partner(osv.osv):
+class res_partner(models.Model):
     
-    _name = 'res.partner'
     _inherit = 'res.partner'
-    _columns = {
-        'state_id': fields.many2one("res.country.state", 'Ubication', domain="[('country_id','=',country_id),('type','=','normal')]"),
-        }
 
-res_partner()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+    state_id = fields.Many2one("res.country.state", 'Ubication', domain="[('country_id','=',country_id),('type','=','normal')]")
+
+class res_company(models.Model):
+    
+    _inherit = 'res.company'
+    
+    state_id = fields.Many2one("res.country.state", 'Ubication', domain="[('country_id','=',country_id),('type','=','normal')]")
+        
