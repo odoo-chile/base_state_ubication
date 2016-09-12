@@ -82,7 +82,7 @@ class res_state(osv.osv):
     _columns = {
             'code': fields.char('State Code', size=32,help='The state code.\n', required=True),
             'complete_name': fields.function(_name_get_fnc, method=True, type="char", string='Complete Name', fnct_search=complete_name_search),
-            'parent_id': fields.many2one('res.country.state','Parent State', select=True, domain=[('type','=','view')]),
+            'parent_id': fields.many2one('res.country.state','Parent State', index=True, domain=[('type','=','view')]),
             'child_ids': fields.one2many('res.country.state', 'parent_id', string='Child States'),
             'type': fields.selection([('view','View'), ('normal','Normal')], 'Type'),
         }

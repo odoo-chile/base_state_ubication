@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "States Inherited (Recursive Ubication)",
-    "version": "1.0",
+    "version": "2.0",
     "description": """
         Add parent state to standard state and transform the states on recursive ubication
         """,
@@ -28,7 +28,6 @@
     "website": "http://cubicERP.com",
     "category": "Others",
     "depends": ["base"],
-    'license': 'AGPL-3',
     "data":["res_state_view.xml",
             "res_partner_view.xml",
             ],
