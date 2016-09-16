@@ -44,10 +44,10 @@ class res_state(osv.osv):
                 acc = acc.parent_id
             data = ' / '.join(data)
             res.append((state.id, (state.code and '[' + state.code + '] ' or '') + data))
-        
+
         return res
-        
-    
+
+
     def complete_name_search(self, cr, user, name, args=None, operator='ilike', context=None, limit=100):
         if not args:
             args = []
@@ -62,7 +62,7 @@ class res_state(osv.osv):
         else:
             ids = self.search(cr, user, args, context=context, limit=limit)
         return self.name_get(cr, user, ids, context=context)
-    
+
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
         if not ids:
             return []
@@ -76,7 +76,7 @@ class res_state(osv.osv):
             data = ' / '.join(data)
             res.append((state.id, data))
         return dict(res)
-        
+
     _name = 'res.country.state'
     _inherit = 'res.country.state'
     _columns = {
